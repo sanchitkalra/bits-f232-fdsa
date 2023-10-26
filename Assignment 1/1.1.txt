@@ -1,0 +1,168 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+class Stack {
+private:
+    queue<int> q1;
+    queue<int> q2;
+
+public:
+    // Push element onto the stack.
+    void push(int x) {
+        // Fill your code here
+
+    }
+
+    // Remove the top element from the stack.
+    void pop() {
+        // Fill your code here
+    }
+
+    // Get the top element of the stack.
+    int top() {
+        // Fill your code here
+
+    }
+
+    // Check if the stack is empty.
+    bool empty() {
+        // Fill your code here
+
+    }
+
+    int size() {
+        // Fill your code here
+
+    }
+};
+
+class EnhancedStack {
+private:
+    Stack stack1;
+    Stack stack2;
+
+public:
+    // Push element onto the stack.
+    void push(int x) {
+        // Fill your code here
+
+    }
+
+    // Remove and return the top element from the stack.
+    void pop() {
+        // Fill your code here
+
+    }
+
+    // Get the top element of the stack.
+    int top() {
+        // Fill your code here
+
+    }
+
+    // Get the minimum element from the stack in constant time.
+    int getMin() {
+        // Fill your code here
+
+    }
+};
+
+Stack sortStack(Stack inputStack) {
+    // Fill your code here
+}
+
+bool isPalindrome(int x) {
+    // Fill your code here
+
+}
+
+
+int main() {
+
+    // Uncomment the following lines to test your code
+
+    //Problem 1.1 - Implement Stack using Queues
+    // Stack myStack;
+    // mystack.push(1);
+    // mystack.push(2);
+    // mystack.push(3);
+
+    // cout << "Top Element: " << mystack.top() << endl; // Should print 3
+    // mystack.pop();
+    // cout << "Popped from stack!"<< endl;
+    // cout << "Top Element after popping: " << mystack.top() << endl; // Should print 2
+    // cout << "Is the stack empty? " << (mystack.empty() ? "Yes" : "No") << endl; // Should print No
+
+    // Problem 1.2 - EnhancedStack
+    // EnhancedStack e_stack;
+    // e_stack.push(3);
+    // e_stack.push(1);
+    // e_stack.push(4);
+    // e_stack.push(2);
+
+    // cout << "Pushed element: 3 to stack" << endl;
+    // cout << "Pushed element: 1 to stack" << endl;
+    // cout << "Pushed element: 4 to stack" << endl;
+    // cout << "Pushed element: 2 to stack" << endl;
+
+    // std::cout << "Original Stack: ";
+    // EnhancedStack originalStack = e_stack;
+    // while (!originalStack.empty()) {
+    //     std::cout << originalStack.top() << " ";
+    //     originalStack.pop();
+    // }
+    // std::cout << std::endl;
+
+    // cout << "Top Element: " << e_stack.top() << endl; // Should print 2
+    // cout << "Minimum Element: " << e_stack.getMin() << endl; // Should print 1
+
+
+    // Problem 2 - Sort Stack
+    // Stack myStack;
+
+    // myStack.push(5);
+    // myStack.push(1);
+    // myStack.push(3);
+    // myStack.push(2);
+    // myStack.push(4);
+
+    // cout << "Pushed element: 5 to stack" << endl;
+    // cout << "Pushed element: 1 to stack" << endl;
+    // cout << "Pushed element: 3 to stack" << endl;
+    // cout << "Pushed element: 2 to stack" << endl;
+    // cout << "Pushed element: 4 to stack" << endl;
+
+    // std::cout << "Original Stack: ";
+    // Stack originalStack = myStack;
+    // while (!originalStack.empty()) {
+    //     std::cout << originalStack.top() << " ";
+    //     originalStack.pop();
+    // }
+    // std::cout << std::endl;
+
+    // Stack sortedStack = sortStack(myStack);
+
+    // std::cout << "Sorted Stack: ";
+    // while (!sortedStack.empty()) {
+    //     std::cout << sortedStack.top() << " ";
+    //     sortedStack.pop();
+    // }
+    // std::cout << std::endl;
+
+
+    // Problem 3 - Palindrome
+    // bool result1 = isPalindrome(121);
+    // cout << "Integer : 121 - "<<"Result 1: " << (result1 ? "true" : "false") << endl; // Should print "true"
+
+    // bool result2 = isPalindrome(1234554321);
+    // cout << "Integer : 1234554321 - "<<"Result 2: " << (result2 ? "true" : "false") << endl; // Should print "true"
+
+    // bool result3 = isPalindrome(10);
+    // cout << "Integer : 10 - "<<"Result 3: " << (result3 ? "true" : "false") << endl; // Should print "false"
+
+    // bool result4 = isPalindrome(-1234554321);
+    // cout << "Integer : -1234554321 - "<<"Result 4: " << (result4 ? "true" : "false") << endl; // Should print "false"
+
+    return 0;
+}

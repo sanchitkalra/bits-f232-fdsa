@@ -1,0 +1,98 @@
+#include <iostream>
+#include <stack>
+#include <queue>
+#include <string>
+#include <vector>
+#include <cmath>
+using namespace std;
+struct TeamMember {
+string name;
+int id;
+TeamMember(string n, int i) : name(n), id(i) {}
+};
+bool isPrime(int num) {
+if (num <= 1) return false;
+if (num <= 3) return true;
+if (num % 2 == 0 || num % 3 == 0) return false;
+for (int i = 5; i * i <= num; i += 6) {
+if (num % i == 0 || num % (i + 2) == 0) return false;
+}
+return true;
+}
+int main() {
+cout << "Enter the number of Operation Team members: ";
+int numMembers;
+cin >> numMembers;
+vector<TeamMember> operationTeam;
+cout << "Enter the names and unique IDs of Operation Team members:" << endl;
+for (int i = 0; i < numMembers; i++) {
+string name;
+int id;
+cin >> name >> id;
+operationTeam.push_back(TeamMember(name, id));
+}
+stack<int> gatheredData;
+queue<int> collectedData;
+for (const TeamMember& member : operationTeam) {
+cout << "Enter an integer value for " << member.name << ": ";
+int num;
+cin >> num;
+gatheredData.push(num);
+}
+cout << "\nFactors of the entered numbers stored in Stack:" << endl;
+while (!gatheredData.empty()) {
+int num = gatheredData.top();
+// Missing code
+cout << "Factors of " << num << ": ";
+stack<int> factorsStack;
+for (int i = 1; i <= sqrt(num); i++) {
+if (num % i == 0) {
+cout << i << " ";
+// Missing code
+if (i != num / i) {
+cout << num / i << " ";
+factorsStack.push(num / i);
+}
+}
+}
+cout << endl;
+while (!factorsStack.empty()) {
+int factor = factorsStack.top();
+factorsStack.pop();
+if (// Missing code) {
+collectedData.push(factor);
+}
+}
+}
+int highestPrime = 0, secondHighestPrime = 0;
+while (!collectedData.empty()) {
+int prime = collectedData.front();
+collectedData.pop();
+if (prime > highestPrime) {
+secondHighestPrime = highestPrime;
+//Missing code;
+} else if (prime > secondHighestPrime && prime < highestPrime) {
+secondHighestPrime = prime;
+}
+}
+cout << "\nSecret Data (Second-Highest Prime Number): " << secondHighestPrime << endl;
+cout << "\nOperation Team: Returning to Flight" << endl;
+bool allMembersValid = true;
+for (const TeamMember& member : operationTeam) {
+cout << "Enter your name and unique ID for verification (Team Member " << member.name << "):" << endl;
+string name;
+int id;
+cin >> name >> id;
+if (member.name == name && member.id == id) {
+cout << "Team Member " << member.name << ", verification successful." << endl;
+} else {
+cout << "Team Member " << member.name << " - You are not valid. You are presumed dead." << endl;
+allMembersValid = false;
+}
+}
+if (allMembersValid) {
+cout << "Congratulations! We achieved it." << endl;
+}
+return 0;
+}
+

@@ -1,0 +1,94 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Defining Node in the Linked List
+struct Node
+{
+    int val;
+    Node *next;
+    Node() : val(0), next(nullptr) {}
+    Node(int x) : val(x), next(nullptr) {}
+};
+
+// Function to convert Number to binary
+string decimalToBinary(int n)
+{
+    string str;
+
+    return str;
+}
+
+// Function to make Linked list from a number
+Node *numberToLinkedList(string str)
+{
+    reverse(str.begin(), str.end()); // to make it easier to add from lsb to msb
+
+    // return head of the linked list with binary values starting from LSB
+}
+
+// // Function to add two numbers in linked list
+Node *addTwoNumbers(Node *head1, Node *head2)
+{
+    int carry = 0;
+    Node *head = new Node(); // make new nodes connecting to head and return head->next
+
+    // return head of the sum linked list
+}
+
+// // Function to convert Binary to Decimal
+int binaryToDecimal(Node *head)
+{
+    // leave the sum list from lsb to msb since it is easier to calculate decimal number using that
+
+    // return the decimal number calculated from the linked list representing binary number
+}
+
+int main()
+{
+    int num1, num2;
+    cout << "Enter First Decimal Number: \n";
+    cin >> num1;
+    cout << "Enter Second Decimal Number: \n";
+    cin >> num2;
+
+    string bin1 = decimalToBinary(num1);
+    cout << bin1 << endl;
+    string bin2 = decimalToBinary(num2);
+    cout << bin2 << endl;
+
+    Node *head1 = numberToLinkedList(bin1);
+    Node *head2 = numberToLinkedList(bin2);
+
+    cout << "First Linked List Traversal: " << endl;
+    Node *node1 = head1;
+    while (node1)
+    {
+        cout << node1->val << "->";
+        node1 = node1->next;
+    }
+    cout << "NULL" << endl;
+
+    cout << "Second Linked List Traversal: " << endl;
+    Node *node2 = head2;
+    while (node2)
+    {
+        cout << node2->val << "->";
+        node2 = node2->next;
+    }
+    cout << "NULL" << endl;
+
+    Node *sum = addTwoNumbers(head1, head2);
+
+    cout << "The sum Linked list is: " << endl;
+    Node *node = sum;
+    while (node)
+    {
+        cout << node->val << "->";
+        node = node->next;
+    }
+    cout << "NULL" << endl;
+
+    int ans = binaryToDecimal(sum);
+
+    cout << ans << endl;
+}

@@ -1,0 +1,60 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+class MemoryManager {
+private:
+queue<int> freeMemory;
+queue<int> allocatedMemory;
+int totalMemorySize;
+public:
+MemoryManager(int size) : totalMemorySize(size) {
+// Initialize the free memory queue with block indices
+// Missing code
+}
+}
+int allocateMemory(int size) {
+if (size <= 0) {
+cout << "Invalid memory allocation size." << endl;
+return -1; // Allocation failed
+}
+if (size > freeMemory.size()) {
+cout << "Memory allocation failed. Not enough memory available." << endl;
+return -1; // Allocation failed
+}
+
+int startIndex = freeMemory.front();
+freeMemory.pop();
+// Mark allocated blocks
+for (int i = startIndex; i < startIndex + size; ++i) {
+// Missing code
+}
+cout << "Allocated memory blocks from " << startIndex << " to " << startIndex + size - 1 <<
+endl;
+return startIndex;
+}
+void deallocateMemory(int startIndex) {
+if (startIndex >= 0 && startIndex < totalMemorySize) {
+// Mark blocks as free
+while (!allocatedMemory.empty() && allocatedMemory.front() <= startIndex) {
+//Missing code
+allocatedMemory.pop();
+}
+cout << "Deallocated memory blocks from " << startIndex << " onwards." << endl;
+} else {
+cout << "Invalid memory block index." << endl;
+}
+}
+};
+int main() {
+int memorySize = 10;
+MemoryManager memoryManager(memorySize);
+int block1 = memoryManager.allocateMemory(3);
+int block2 = memoryManager.allocateMemory(2);
+int block3 = memoryManager.allocateMemory(4);
+memoryManager.deallocateMemory(block1);
+memoryManager.deallocateMemory(block2);
+int block4 = memoryManager.allocateMemory(2);
+int block5 = memoryManager.allocateMemory(1);
+return 0;
+
+}
