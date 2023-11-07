@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string>
 #include <queue>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -24,9 +24,11 @@ int main() {
     cout << "Enter the time quantum: ";
     cin >> quantum;
 
-    priority_queue<Task, vector<Task>, CompareTaskPriority> taskQueue;  // Ready Queue
+    priority_queue<Task, vector<Task>, CompareTaskPriority>
+        taskQueue;  // Ready Queue
     Task taskHold;
-    taskHold.burstTime = -1;  // Initialize burst time to -1 to indicate no task is held.
+    taskHold.burstTime =
+        -1;  // Initialize burst time to -1 to indicate no task is held.
 
     while (true) {
         int choice;
@@ -55,19 +57,26 @@ int main() {
 
             if (taskHold.burstTime != -1) {
                 // If a task is already being held, push it back into the queue
-               // Write missing code here
+                // Write missing code here
+                taskQueue.push(taskHold);
             }
 
             if (!taskQueue.empty()) {
                 Task currentTask = taskQueue.top();
                 taskQueue.pop();
 
-                cout << "Executing task: " << currentTask.name << " (Priority: " << currentTask.priority << ", Burst Time: " << currentTask.burstTime << ")\n";
+                cout << "Executing task: " << currentTask.name
+                     << " (Priority: " << currentTask.priority
+                     << ", Burst Time: " << currentTask.burstTime << ")\n";
 
                 if (currentTask.burstTime > quantum) {
                     currentTask.burstTime -= quantum;
-                    cout << "Task partially executed. Remaining burst time: " << currentTask.burstTime << "\n";
-                    //Missing code here
+                    cout << "Task partially executed. Remaining burst time: "
+                         << currentTask.burstTime << "\n";
+                    // Missing code here
+                    if (taskQueue.size() > 0)
+                        currentTask.priority = taskQueue.top().priority + 1;
+                    taskQueue.push(currentTask);
                 } else {
                     cout << "Task completed.\n";
                 }
@@ -76,6 +85,7 @@ int main() {
             }
         } else if (choice == 3) {
             // Missing code here
+            break;
         } else {
             cout << "Invalid choice. Please try again.\n";
         }
